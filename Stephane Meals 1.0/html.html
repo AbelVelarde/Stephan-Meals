@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="checkBoxController.js"></script>
+    <script src="Main Controller.js"></script>
+    <script src="layoutMultiple.js"></script>
+    <script src="layoutIndividual.js"></script>
+    <title>Stephane's meals</title>
+</head>
+
+<body onload=main()>
+    <header>
+        <div id="titulo">
+            <div>
+                <h1>Stephane's meals</h1>
+                <h2>Your homemade recipes web</h2>
+            </div>
+
+        </div>
+        <nav>
+            <div id="searcher">
+                <form onsubmit="buscarPorNombre();return false">
+                    <input type="text" id="searchBox" placeholder="Search">
+                </form>
+                <button onclick=buscarPorNombre()>Search</button>
+                <button onclick=random()>Random</button>
+
+            </div>
+            <div id="orderer">
+                <p>Order by:</p>
+                <div>
+                    <form id="radioButtons">
+                        <input type="radio" name="order" id="name" checked=true onclick=ordenar()> Name<br>
+                        <input type="radio" name="order" id="categoria" onclick=ordenar()> Category <br>
+                        <input type="radio" name="order" id="area" onclick=ordenar()> Zone 
+                    </form>
+                </div>
+            </div>
+            <div id="filterSearcher">
+                <p>Search by:</p>
+                <div>
+                    <select name="Categoria" id="buscadorCat" onchange=searchBy(1)>
+                        <option selected value="0"> Category </option>
+                        <option disabled> ----------------- </option>
+                    </select>
+                    <select id="buscadorZona" onchange=searchBy(2)>
+                        <option selected value="0"> Zone </option>
+                        <option disabled> ----------------- </option>
+                    </select>
+                    <select id="buscadorIngr" onchange=searchBy(3)>
+                        <option selected value="0"> Ingredient </option>
+                        <option disabled> ----------------- </option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="principal">
+
+    </div>
+</body>
+
+</html>
